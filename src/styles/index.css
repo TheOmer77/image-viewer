@@ -1,0 +1,73 @@
+:root {
+  --font-family: 'Rubik', sans-serif;
+
+  --color-text-primary: hsl(0, 0%, 13%);
+  --color-text-secondary: hsla(0, 0%, 13%, 0.4);
+  --color-text-disabled: hsla(0, 0%, 13%, 0.25);
+  --color-bg: hsl(212, 100%, 97%);
+  --color-modal: hsla(0, 0%, 13%, 0.5);
+  --color-modal-text: hsl(212, 100%, 97%);
+  --color-primary: hsl(212, 100%, 58%);
+  --color-primary-header: hsl(212, 100%, 91%);
+
+  --transition-duration: 250ms;
+  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+}
+
+input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  box-shadow: 0 0 0 0.0625rem var(--color-text-disabled);
+  transition: box-shadow var(--transition-duration) var(--transition-easing);
+}
+
+input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+input:focus {
+  box-shadow: 0 0 0 0.175rem var(--color-primary);
+  outline: none;
+}
+
+.input-start-icon {
+  position: absolute;
+  transform: translate(0.625rem, 0.625rem);
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 1;
+  color: var(--color-text-secondary);
+}
+
+.input-start-icon + input {
+  padding-inline-start: 2.75rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: hsl(0, 0%, 87%);
+    --color-text-secondary: hsla(0, 0%, 87%, 0.4);
+    --color-text-disabled: hsla(0, 0%, 87%, 0.25);
+    --color-bg: hsl(212, 100%, 3%);
+    --color-primary: hsl(212, 100%, 83%);
+    --color-primary-header: hsl(212, 34%, 15%);
+  }
+}

@@ -1,0 +1,34 @@
+:root {
+  --header-height: 5rem;
+}
+
+.header {
+  width: 100%;
+  height: var(--header-height);
+  margin-bottom: 1rem;
+  background-color: var(--color-primary-header);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+.header.header-fixed {
+  position: fixed;
+}
+
+.header input {
+  transition: background-color var(--transition-duration)
+      var(--transition-easing),
+    box-shadow var(--transition-duration) var(--transition-easing);
+}
+
+.header input:not(:focus) {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.header.header-fixed + .header-fixed-margin {
+  height: var(--header-height);
+}

@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+@media (min-width: 75rem) {
+  padding: 0;
+}
