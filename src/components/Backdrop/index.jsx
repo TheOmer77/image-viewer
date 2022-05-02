@@ -29,6 +29,7 @@ const Backdrop = ({ open = false, className, ...props }) => {
       <div
         ref={ref}
         className={classNames(classes.modal, className)}
+        role='presentation'
         {...props}
       />
     </CSSTransition>,

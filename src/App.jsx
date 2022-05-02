@@ -67,7 +67,7 @@ const App = () => {
       </Container>
       <Backdrop
         open={imageViewer.open}
-        onClick={() => setImageViewer(prev => ({ ...prev, open: false }))}
+        // onClick={() => setImageViewer(prev => ({ ...prev, open: false }))}
       >
         <ImageViewer src={imageViewer.image?.urls?.full} />
       </Backdrop>
