@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
@@ -12,6 +12,14 @@ import classes from './index.module.css';
  */
 const Backdrop = ({ open = false, className, ...props }) => {
   const ref = useRef();
+
+  useEffect(() => {
+    if (open) document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = null;
+    };
+  }, [open]);
 
   return createPortal(
     <CSSTransition
