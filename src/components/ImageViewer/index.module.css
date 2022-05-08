@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  direction: ltr;
   transition: transform var(--transition-duration) var(--transition-easing);
 }
 
